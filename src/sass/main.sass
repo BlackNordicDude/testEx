@@ -1,0 +1,799 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+.wrapper
+    display: flex
+    justify-content: space-between
+    margin: 0 auto
+    padding: 42px
+    width: 1140px
+    box-shadow: 1px 4px 12px rgba(54, 94, 125, 0.1)
+    border-radius: 16px
+.modal
+    width: 100%
+    height: 100%
+    display: none
+    justify-content: center
+    align-items: center
+    &::before
+        content: ''
+        width: 100%
+        height: 100%
+        background: black
+        opacity: 0.3
+        z-index: 100
+        position: fixed
+        left: 0
+        top: 0
+    &_note
+        position: fixed
+        left: 50%
+        top: 20%
+        transform: translateX(-50%)
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        padding: 24px
+        width: 442px
+        height: 336px
+        background: #FFFFFF
+        border-radius: 16px
+        z-index: 101
+        &_header
+            position: static
+            left: 0%
+            right: 0%
+            top: 0%
+            bottom: 0%
+            font-family: Inter
+            font-style: normal
+            font-weight: 500
+            font-size: 18px
+            line-height: 24px
+            color: #232056
+            flex: none
+            order: 0
+            flex-grow: 0
+        input
+            padding: 11.5px
+            position: static
+            width: 394px
+            height: 178px
+            left: calc(50% - 394px/2)
+            top: 44px
+            background: #FFFFFF
+            border: 1px solid #E7EEF6
+            box-sizing: border-box
+            border-radius: 8px
+            flex: none
+            order: 1
+            align-self: stretch
+            flex-grow: 1
+            margin: 20px 0px
+        &_btns
+            display: flex
+            flex-direction: row
+            align-items: flex-start
+            padding: 0px
+            position: static
+            width: 394px
+            height: 42px
+            left: 24px
+            top: 270px
+            flex: none
+            order: 1
+            align-self: stretch
+            flex-grow: 0
+            #cancel
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                padding: 0px 20px
+                position: static
+                width: 189px
+                height: 42px
+                left: calc(50% - 189px/2 - 102.5px)
+                top: calc(50% - 42px/2)
+                background: #EEF2F4
+                border-radius: 6px
+                flex: none
+                order: 0
+                align-self: stretch
+                flex-grow: 1
+                margin: 0 16px 0 0
+                border: none
+            #send
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                padding: 0px 12px
+                position: static
+                width: 189px
+                height: 42px
+                left: calc(50% - 189px/2 + 102.5px)
+                top: calc(50% - 42px/2)
+                background: #FFA438
+                border-radius: 6px
+                flex: none
+                order: 1
+                align-self: stretch
+                flex-grow: 1
+                margin: 0 16px 0 0
+                border: none
+                color: #fff
+.name
+    position: static
+    width: 353px
+    display: flex
+    height: 20px
+    font-family: Inter
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    color: #1E1D2E
+    flex: none
+    flex-grow: 0
+    img
+        margin-right: 9px
+.header
+    display: flex
+    align-items: flex-start
+    padding: 0px
+    position: static
+    width: 710px
+    height: 42px
+    left: 0px
+    top: 0px
+    background: #FAFCFD
+    flex: none
+    order: 0
+    align-self: stretch
+    flex-grow: 0
+    margin: 20px 0px 
+    padding: 10px
+    border-bottom: 1px solid #D8DEEB
+.show_btn
+    display: none
+.main 
+    min-height: 1299.3px
+    width: 710px
+    &_person
+        display: flex
+        width: 668px
+        height: 100px
+        font-family: Inter
+        font-style: normal
+        font-weight: 500
+        font-size: 22px
+        line-height: 24px
+        color: #1E1D2E
+        flex: none
+        order: 0
+        align-self: stretch
+        flex-grow: 0
+        margin: 0
+        &_img
+            width: 100px
+            height: 100px
+        &_info
+            display: flex
+            flex-direction: column
+            margin-left: 18.75px
+            &_name
+                width: 467px
+                height: 24px
+                font-family: Inter
+                font-style: normal
+                font-weight: 500
+                font-size: 22px
+                line-height: 24px
+                color: #1E1D2E
+                flex: none
+                order: 0
+                align-self: stretch
+                flex-grow: 0
+            &_age
+                width: 447px
+                height: 24px
+                left: 20px
+                font-family: Inter
+                font-style: normal
+                font-weight: normal
+                font-size: 16px
+                line-height: 24px
+                display: flex
+                align-items: center
+                color: #1E1D2E
+                flex: none
+                order: 1
+                flex-grow: 1
+                margin: 0px 4px
+                img
+                    margin-right: 5px
+            &_status
+                width: 447px
+                height: 20px
+                left: 20px
+                font-family: Inter
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 20px
+                color: #8999A5
+                flex: none
+                order: 1
+                flex-grow: 1
+                margin: 0px 4px
+                span
+                    color: #03b912
+        &_extra
+            display: flex
+            height: 24px
+            width: 104px
+            justify-content: space-between
+            align-items: center
+            .extra
+                &_icons
+                    cursor: pointer
+    &_prof
+        margin-top: 22px
+        &_title
+            width: 240px
+            height: 24px
+            left: 0px
+            top: 0px
+            font-family: Inter
+            font-style: normal
+            font-weight: 500
+            font-size: 22px
+            line-height: 24px
+            color: #1E1D2E
+            flex: none
+            order: 0
+            flex-grow: 0
+            margin: 2px 0px
+        &_subtitle
+            position: static
+            width: 710px
+            height: 22px
+            left: 0px
+            top: 0px
+            font-family: Inter
+            font-style: normal
+            font-weight: 500
+            font-size: 16px
+            line-height: 22px
+            color: #1E1D2E
+            flex: none
+            order: 0
+            align-self: stretch
+            flex-grow: 0
+            margin: 6px 0px
+        &_content
+            position: static
+            width: 710px
+            height: 60px
+            left: 0px
+            top: 28px
+            font-family: Inter
+            font-style: normal
+            font-weight: normal
+            font-size: 14px
+            line-height: 20px
+            color: #1E1D2E
+            flex: none
+            order: 1
+            align-self: stretch
+            flex-grow: 0
+            margin: 6px 0 16px 0
+            ul
+                margin-left: 25px
+    &_descr
+        .descr
+            &_item
+                display: flex
+                margin-bottom: 8px
+            &_title
+                position: static
+                width: 170px
+                height: 20px
+                left: 0px
+                top: 0px
+                font-family: Inter
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 20px
+                color: #606483
+                flex: none
+                order: 0
+                flex-grow: 0
+                margin: 0 6px 0 0
+            &_text
+                position: static
+                width: 586px
+                height: 20px
+                left: 176px
+                top: 0px
+                font-family: Inter
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 20px
+                color: #1E1D2E
+                flex: none
+                order: 1
+                flex-grow: 1
+                margin: 0px 6px
+    &_job
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        padding: 0px
+        position: static
+        width: 710px
+        left: 0px
+        top: 108px
+        flex: none
+        order: 1
+        align-self: stretch
+        flex-grow: 0
+        margin: 32px 0px
+        &_header
+            &_text
+                position: static
+                width: 108px
+                height: 22px
+                left: 10px
+                top: 10px
+                font-family: Inter
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 22px
+                text-transform: uppercase
+                color: #232056
+                flex: none
+                order: 0
+                flex-grow: 0
+                margin: 0 2px 0 10px
+            span
+                text-transform: lowercase
+                font-weight: bold
+                font-size: 14px
+                line-height: 22px
+                margin-top: 1px
+        .exp
+            display: flex
+            flex-direction: column
+            width: 710px
+            &_date
+                display: flex
+                margin-bottom: 18px
+                .time_interval
+                    position: static
+                    width: 350px
+                    height: 22px
+                    left: 0px
+                    top: 0px
+                    font-family: Inter
+                    font-style: normal
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 22px
+                    color: #1E1D2E
+                    flex: none
+                    order: 0
+                    flex-grow: 1
+                .total
+                    position: static
+                    width: 350px
+                    height: 24px
+                    font-family: Inter
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 16px
+                    line-height: 24px
+                    text-align: right
+                    color: #606483
+                    flex: none
+                    order: 1
+                    flex-grow: 1
+            &_place
+                margin-bottom: 12px
+                .link
+                    a
+                        text-decoration: none
+                        position: static
+                        width: 576px
+                        height: 14px
+                        left: 0px
+                        top: 20px
+                        font-family: Inter
+                        font-style: normal
+                        font-weight: normal
+                        font-size: 12px
+                        line-height: 14px
+                        color: #606483
+                        flex: none
+                        order: 1
+                        flex-grow: 0
+                        margin: 0px 0px
+            &_position
+                margin-bottom: 12px
+            .wrap
+                display: flex
+                flex-direction: column
+                .title
+                    position: static
+                    width: 710px
+                    height: 20px
+                    left: 0px
+                    top: 0px
+                    font-family: Inter
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 20px
+                    color: #1E1D2E
+                    flex: none
+                    order: 0
+                    align-self: stretch
+                    flex-grow: 0
+                    margin: 8px 0px
+                .list
+                    position: static
+                    width: 710px
+                    min-height: 40px
+                    font-family: Inter
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 14px
+                    line-height: 20px
+                    color: #1E1D2E
+                    flex: none
+                    align-self: stretch
+                    flex-grow: 0
+                    margin: 20px px
+                    .item
+                        margin-left: 20px
+                .hide_btn
+                    position: static
+                    width: 710px
+                    height: 14px
+                    left: 0px
+                    top: 296px
+                    font-family: Inter
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 12px
+                    line-height: 14px
+                    color: #606483
+                    flex: none
+                    order: 2
+                    align-self: stretch
+                    margin: 8px 0px
+                    flex-grow: 0
+                .show_btn
+                    position: static
+                    width: 710px
+                    height: 14px
+                    left: 0px
+                    top: 296px
+                    font-family: Inter
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 12px
+                    line-height: 14px
+                    color: #606483
+                    flex: none
+                    order: 2
+                    align-self: stretch
+                    margin: 8px 0px
+                    flex-grow: 0
+.side 
+    width: 290px
+    .salary
+        display: flex
+        justify-content: space-between
+        .value
+            position: static
+            width: 124px
+            height: 36px
+            left: 0px
+            top: 0px
+            font-family: Inter
+            font-style: normal
+            font-weight: 500
+            font-size: 28px
+            line-height: 36px
+            color: #1E1D2E
+            flex: none
+            order: 0
+            flex-grow: 0
+            margin: 0 0 24px 0
+    .interactive
+        .offer
+            display: flex
+            &_btn
+                position: relative
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                padding: 8px
+                width: 234px
+                left: calc(50% - 234px/2 - 28px)
+                top: 0%
+                bottom: 0%
+                background: #FFA438
+                border-radius: 6px
+                flex: none
+                order: 0
+                flex-grow: 1
+                margin: 0
+                border: none
+                cursor: pointer
+                &_text   
+                    position: static
+                    width: 160px
+                    height: 20px
+                    left: 0px
+                    top: 0px
+                    font-family: Inter
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 20px
+                    display: flex
+                    align-items: center
+                    color: #FFFFFF
+                    flex: none
+                    order: 2
+                    flex-grow: 0
+                    margin: 0px 2px 
+                .drop_menu
+                    position: absolute
+                    top: 36px
+                    left: 0
+                    list-style: none
+                    display: flex
+                    flex-direction: column
+                    align-items: flex-start
+                    padding: 8px
+                    width: 234px
+                    background: #FFFFFF
+                    border: 1px solid #E5E5E5
+                    box-sizing: border-box
+                    box-shadow: 1px 4px 40px rgba(54, 94, 125, 0.1)
+                    border-radius: 6px
+                    cursor: pointer
+                    display: none
+                    &_item
+                        display: flex
+                        flex-direction: row
+                        align-items: center
+                        padding: 8px
+                        position: static
+                        width: 218px
+                        height: 34px
+                        border-radius: 4px
+                        flex: none
+                        order: 0
+                        align-self: stretch
+                        flex-grow: 0
+                        font-family: Inter
+                        font-style: normal
+                        font-weight: normal
+                        font-size: 13px
+                        line-height: 18px
+                        color: #1B1C1E
+                        &:hover
+                            background: #F5F7F8
+                            border-radius: 4px
+                        &_text
+                            margin-left: 8px        
+            .favorite
+                position: static
+                display: flex
+                width: 36px
+                height: 36px
+                left: 87.59%
+                right: 0%
+                top: 0%
+                bottom: 0%
+                background: #EEF2F4
+                border-radius: 40px
+                flex: none
+                order: 1
+                flex-grow: 0
+                margin: 0px 20px
+                align-items: center
+                justify-content: center
+                cursor: pointer
+        .videointerview
+            display: flex
+            flex-direction: row
+            align-items: center
+            padding: 10px 0px
+            position: static
+            width: 290px
+            height: 74px
+            left: 0px
+            top: 52px
+            background: #FFFFFF
+            border: 1px solid #E7EEF6
+            box-sizing: border-box
+            border-radius: 8px
+            flex: none
+            order: 2
+            align-self: stretch
+            flex-grow: 0
+            margin: 16px 0px
+            .content
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+                padding: 0px
+                position: static
+                width: 218.47px
+                height: 54px
+                left: 71.53px
+                top: 10px
+                flex: none
+                order: 1
+                flex-grow: 1
+                margin: 0px 12px
+                &_title
+                    position: static
+                    width: 218.47px
+                    left: calc(50% - 218.47px/2)
+                    top: 0%
+                    bottom: 59.26%
+                    font-family: Inter
+                    font-style: normal
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 22px
+                    color: #232056
+                    flex: none
+                    order: 0
+                    align-self: stretch
+                    flex-grow: 0
+                    margin: 0
+                &_text
+                    position: static
+                    width: 218.47px
+                    height: 28px
+                    left: calc(50% - 218.47px/2)
+                    top: calc(50% - 28px/2 + 13px)
+                    font-family: Inter
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 12px
+                    line-height: 14px
+                    color: #606483
+                    flex: none
+                    order: 1
+                    align-self: stretch
+                    flex-grow: 0
+                    margin: 4px 0px
+        .history
+            width: 290px
+            left: 0px
+            top: 158px
+            background: #FFFFFF
+            border: 1px solid #E7EEF6
+            box-sizing: border-box
+            border-radius: 10px
+            flex: none
+            order: 1
+            align-self: stretch
+            flex-grow: 0
+            margin: 32px 0px
+            &_btn
+                border-bottom: 1px solid#E7EEF6
+                padding: 15px 0 15px 20px
+                width: 290px
+                height: 50px
+                font-family: Source Sans Pro
+                font-style: normal
+                font-weight: normal
+                font-size: 16px
+                line-height: 20px
+                text-transform: uppercase
+                color: #767D86
+                flex: none
+                order: 0
+                flex-grow: 0
+            ul 
+                padding: 0 20px
+                li 
+                    display: flex
+                    &:nth-child(2)
+                        .hli_descr
+                            border-color: #FFA438
+                    &:nth-child(3)
+                        .hli_descr
+                            border-color: #AFDDAB
+                    &:not(:nth-last-child(-n+1))
+                        margin: 10px 0 20px 0
+                    .hli
+                        &_info
+                            margin-right: 10px
+                            &_img
+                                display: flex
+                                justify-content: center
+                            .date
+                                position: static
+                                width: 47px
+                                height: 20px
+                                left: 0px
+                                top: 26px
+                                font-family: Inter
+                                font-style: normal
+                                font-weight: 500
+                                font-size: 12px
+                                line-height: 20px
+                                color: #1B1C1E
+                                flex: none
+                                order: 1
+                                flex-grow: 0
+                                margin: 2px 0px
+                        &_descr
+                            border-left: 3px solid #5FB6E7
+                            display: flex
+                            flex-direction: column
+                            align-items: flex-start
+                            padding: 5px 10px
+                            position: static
+                            width: 128px
+                            height: 43px
+                            left: 87px
+                            top: 14.24px
+                            flex: none
+                            flex-grow: 0
+                            margin: 0px 10px
+                            &_title
+                                position: static
+                                width: 138px
+                                height: 14px
+                                left: 0px
+                                top: 0px
+                                font-family: Inter
+                                font-style: normal
+                                font-weight: normal
+                                font-size: 12px
+                                line-height: 14px
+                                color: #767D86
+                                flex: none
+                                order: 0
+                                flex-grow: 0
+                                margin: 0px 4px
+                            &_text
+                                position: static
+                                width: 122px
+                                height: 20px
+                                left: 0px
+                                top: 0px
+                                font-family: Inter
+                                font-style: normal
+                                font-weight: 500
+                                font-size: 14px
+                                line-height: 20px
+                                color: #1B1C1E
+                                flex: none
+                                order: 0
+                                flex-grow: 0
+                                margin: 0px 4px
+        .share
+            padding: 0 15px
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+                
